@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Pro</title>
+  <meta name="description" content="Calculadora científica web: aritmética, ciencia, ecuaciones y conversor de unidades." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="dark">
+  <div class="app">
+    <!-- Decorative animated background -->
+    <div class="bg-orbs" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
+    </div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-logo">∑</span>
+        <div class="brand-text">
+          <h1>Calculadora <span>Pro</span></h1>
+          <p>Aritmética · Ciencia · Ecuaciones · Conversor</p>
+        </div>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema">
+        <span class="theme-icon sun">☀</span>
+        <span class="theme-icon moon">☾</span>
+      </button>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="standard" role="tab">Estándar</button>
+      <button class="tab" data-tab="scientific" role="tab">Científica</button>
+      <button class="tab" data-tab="equations" role="tab">Ecuaciones</button>
+      <button class="tab" data-tab="converter" role="tab">Conversor</button>
+    </nav>
+
+    <main class="content">
+      <!-- ============ STANDARD / SCIENTIFIC CALCULATOR ============ -->
+      <section class="panel active" id="panel-standard">
+        <div class="calc-wrap">
+          <div class="calculator">
+            <div class="display">
+              <div class="display-history" id="display-history"></div>
+              <input
+                type="text"
+                id="display-main"
+                class="display-main"
+                inputmode="text"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="0"
+                aria-label="Expresión"
+              />
+              <div class="display-preview" id="display-preview"></div>
+            </div>
+
+            <div class="memory-row">
+              <button class="mem-btn" data-mem="MC" title="Borrar memoria">MC</button>
+              <button class="mem-btn" data-mem="MR" title="Recuperar memoria">MR</button>
+              <button class="mem-btn" data-mem="M+" title="Sumar a memoria">M+</button>
+              <button class="mem-btn" data-mem="M-" title="Restar de memoria">M−</button>
+              <span class="mem-indicator" id="mem-indicator">M</span>
+            </div>
+
+            <!-- Scientific extra keys (hidden in standard mode) -->
+            <div class="keys-scientific" id="keys-scientific">
+              <button class="key fn" data-insert="sin(">sin</button>
+              <button class="key fn" data-insert="cos(">cos</button>
+              <button class="key fn" data-insert="tan(">tan</button>
+              <button class="key fn" data-insert="asin(">asin</button>
+              <button class="key fn" data-insert="acos(">acos</button>
+
+              <button class="key fn" data-insert="atan(">atan</button>
+              <button class="key fn" data-insert="ln(">ln</button>
+              <button class="key fn" data-insert="log10(">log₁₀</button>
+              <button class="key fn" data-insert="log2(">log₂</button>
+              <button class="key fn" data-insert="exp(">eˣ</button>
+
+              <button class="key fn" data-insert="sqrt(">√</button>
+              <button class="key fn" data-insert="cbrt(">∛</button>
+              <button class="key fn" data-action="square">x²</button>
+              <button class="key fn" data-insert="^">xʸ</button>
+              <button class="key fn" data-insert="factorial(">n!</button>
+
+              <button class="key fn" data-insert="pi">π</button>
+              <button class="key fn" data-insert="e">e</button>
+              <button class="key fn" data-insert="abs(">|x|</button>
+              <button class="key fn" data-insert="(">(</button>
+              <button class="key fn" data-insert=")">)</button>
+
+              <button class="key fn deg-toggle" id="deg-toggle" data-action="toggle-deg" title="Grados / Radianes">DEG</button>
+              <button class="key fn" data-insert="mod">mod</button>
+              <button class="key fn" data-insert="//">÷⌊⌋</button>
+              <button class="key fn" data-insert="%">%</button>
+              <button class="key fn" data-action="ans">ANS</button>
+            </div>
+
+            <!-- Main numeric keypad -->
+            <div class="keys-main">
+              <button class="key util" data-action="clear">AC</button>
+              <button class="key util" data-action="backspace">⌫</button>
+              <button class="key util" data-insert="(">( )</button>
+              <button class="key op" data-insert="/">÷</button>
+
+              <button class="key num" data-insert="7">7</button>
+              <button class="key num" data-insert="8">8</button>
+              <button class="key num" data-insert="9">9</button>
+              <button class="key op" data-insert="*">×</button>
+
+              <button class="key num" data-insert="4">4</button>
+              <button class="key num" data-insert="5">5</button>
+              <button class="key num" data-insert="6">6</button>
+              <button class="key op" data-insert="-">−</button>
+
+              <button class="key num" data-insert="1">1</button>
+              <button class="key num" data-insert="2">2</button>
+              <button class="key num" data-insert="3">3</button>
+              <button class="key op" data-insert="+">+</button>
+
+              <button class="key num" data-insert="0">0</button>
+              <button class="key num" data-insert=".">.</button>
+              <button class="key num" data-insert="00">00</button>
+              <button class="key equals" data-action="equals">=</button>
+            </div>
+          </div>
+
+          <!-- History sidebar -->
+          <aside class="history">
+            <div class="history-head">
+              <h2>Historial</h2>
+              <button id="clear-history" class="link-btn" title="Limpiar historial">Limpiar</button>
+            </div>
+            <ul class="history-list" id="history-list">
+              <li class="history-empty">Aún no hay cálculos.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============ EQUATIONS ============ -->
+      <section class="panel" id="panel-equations">
+        <div class="card eq-card">
+          <h2 class="card-title">Resolvedor de ecuaciones</h2>
+
+          <div class="eq-block">
+            <h3>Primer grado <span class="eq-form">a·x + b = 0</span></h3>
+            <div class="eq-inputs">
+              <label>a <input type="number" id="lin-a" step="any" placeholder="0" /></label>
+              <label>b <input type="number" id="lin-b" step="any" placeholder="0" /></label>
+              <button class="solve-btn" id="solve-linear">Resolver</button>
+            </div>
+            <div class="eq-result" id="lin-result"></div>
+          </div>
+
+          <div class="eq-block">
+            <h3>Segundo grado <span class="eq-form">a·x² + b·x + c = 0</span></h3>
+            <div class="eq-inputs">
+              <label>a <input type="number" id="quad-a" step="any" placeholder="0" /></label>
+              <label>b <input type="number" id="quad-b" step="any" placeholder="0" /></label>
+              <label>c <input type="number" id="quad-c" step="any" placeholder="0" /></label>
+              <button class="solve-btn" id="solve-quad">Resolver</button>
+            </div>
+            <div class="eq-result" id="quad-result"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONVERTER ============ -->
+      <section class="panel" id="panel-converter">
+        <div class="card conv-card">
+          <h2 class="card-title">Conversor de unidades</h2>
+
+          <div class="conv-categories" id="conv-categories">
+            <button class="conv-cat active" data-cat="length">Longitud</button>
+            <button class="conv-cat" data-cat="weight">Peso</button>
+            <button class="conv-cat" data-cat="speed">Velocidad</button>
+            <button class="conv-cat" data-cat="metric">Prefijos métricos</button>
+          </div>
+
+          <div class="conv-body">
+            <div class="conv-field">
+              <input type="number" id="conv-input" step="any" value="1" />
+              <select id="conv-from"></select>
+            </div>
+            <button class="conv-swap" id="conv-swap" title="Intercambiar">⇅</button>
+            <div class="conv-field">
+              <input type="text" id="conv-output" readonly />
+              <select id="conv-to"></select>
+            </div>
+          </div>
+          <p class="conv-formula" id="conv-formula"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Hecho con HTML · CSS · JS — sin dependencias. Atajos de teclado activos en la calculadora.</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
