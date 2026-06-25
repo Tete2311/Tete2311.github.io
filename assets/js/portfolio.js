@@ -2,7 +2,7 @@
    Portfolio — interacciones (sin dependencias)
    ========================================================= */
 
-/* ---- Skills (editá esta lista a gusto) ---- */
+/* ---- Tecnologías (editá esta lista a gusto) ---- */
 const SKILLS = [
   { name: "HTML", icon: "🌐" },
   { name: "CSS", icon: "🎨" },
@@ -10,12 +10,34 @@ const SKILLS = [
   { name: "Python", icon: "🐍" },
   { name: "Git", icon: "🔧" },
   { name: "GitHub", icon: "🐙" },
+  { name: "Electrónica", icon: "🔌" },
+];
+
+/* ---- Habilidades blandas ---- */
+const SOFT_SKILLS = [
+  "Comunicación efectiva",
+  "Pensamiento crítico",
+  "Resolución de problemas",
+  "Autodidacta",
+  "Adaptabilidad",
+  "Trabajo en equipo",
+  "Gestión del tiempo",
+  "Atención al detalle",
+  "Proactividad",
+  "Creatividad",
 ];
 
 const skillsGrid = document.getElementById("skills-grid");
 if (skillsGrid) {
   skillsGrid.innerHTML = SKILLS.map(
     (s) => `<div class="skill"><span class="skill-ico">${s.icon}</span><span>${s.name}</span></div>`
+  ).join("");
+}
+
+const softGrid = document.getElementById("softskills");
+if (softGrid) {
+  softGrid.innerHTML = SOFT_SKILLS.map(
+    (s) => `<span class="softskill"><span class="softskill-ico">✦</span>${s}</span>`
   ).join("");
 }
 
