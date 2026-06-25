@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thiago Torres Ortiz — Portfolio</title>
-  <meta name="description" content="Portfolio de Thiago Torres Ortiz — proyectos de programación." />
+  <title>Thiago Torres — Desarrollador Web | Eterial Company</title>
+  <meta name="description" content="Portfolio de Thiago Torres — desarrollador web y fundador de Eterial Company. Desarrollo de webs, apps y soluciones digitales." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
@@ -21,7 +21,7 @@
   <header class="nav" id="nav">
     <a href="#top" class="nav-brand">
       <span class="brand-mark">TT</span>
-      <span class="brand-name">Thiago<span class="dim">.dev</span></span>
+      <span class="brand-name">Thiago Torres<span class="dim"> · Eterial</span></span>
     </a>
     <nav class="nav-links">
       <a href="#about">Sobre mí</a>
@@ -42,15 +42,21 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero">
       <div class="hero-inner reveal">
+        <div class="hero-avatar" title="Thiago Torres">
+          <span class="hero-avatar-initials">TT</span>
+          <!-- Para usar tu foto: reemplazá las iniciales de arriba por
+               <img src="assets/img/perfil.jpg" alt="Thiago Torres" /> -->
+        </div>
         <p class="hero-eyebrow">👋 Hola, soy</p>
-        <h1 class="hero-title" data-edit="name">Thiago Torres Ortiz</h1>
+        <h1 class="hero-title" data-edit="name">Thiago Torres</h1>
         <h2 class="hero-role">
-          <span data-edit="role">Estudiante de Programación</span>
+          <span data-edit="role">Desarrollador Web · Fundador de Eterial Company</span>
           <span class="cursor-blink">|</span>
         </h2>
         <p class="hero-tagline" data-edit="tagline">
-          Aprendiendo a construir cosas con código. Me gusta convertir ideas en
-          aplicaciones que se vean bien y sean prácticas de usar.
+          De la filosofía y la literatura realista al código. Llevo esa misma
+          búsqueda de sentido y claridad al desarrollo: construyo webs y apps
+          con propósito, buen diseño y obsesión por el detalle.
         </p>
         <div class="hero-cta">
           <a href="#projects" class="btn btn-primary">Ver proyectos</a>
@@ -77,21 +83,29 @@
       <div class="about-grid reveal">
         <div class="about-text">
           <p data-edit="about1">
-            Soy <strong>Thiago</strong>, y estoy dando mis primeros pasos en el
-            mundo de la programación. Me apasiona aprender tecnologías nuevas y
-            construir proyectos reales, desde la lógica hasta el diseño.
+            Soy <strong>Thiago Torres</strong>, de San Nicolás de los Arroyos,
+            Argentina. Soy desarrollador web autodidacta y estudio una
+            Tecnicatura en Electrónica, así que me muevo cómodo tanto en el
+            software como entendiendo cómo funcionan las cosas por dentro.
           </p>
           <p data-edit="about2">
-            Disfruto cuando algo que programé queda prolijo y agradable de usar.
-            Este portfolio reúne los proyectos en los que voy trabajando mientras
-            sigo creciendo como desarrollador.
+            Estoy dando forma a <strong>Eterial Company</strong>, mi
+            emprendimiento de desarrollo de webs, aplicaciones y soluciones
+            digitales. Mi objetivo es crear productos que combinen buen diseño,
+            código sólido y una experiencia que valga la pena usar.
+          </p>
+          <p data-edit="about3">
+            Fuera del código me vas a encontrar leyendo a Camus, Dostoievski o
+            Robert Greene. La literatura realista y la filosofía moldean mi forma
+            de pensar y de resolver problemas: con criterio, profundidad y foco.
           </p>
         </div>
         <ul class="about-facts">
-          <li><span class="fact-k">📍 Ubicación</span><span class="fact-v" data-edit="location">—</span></li>
-          <li><span class="fact-k">🎯 Enfoque</span><span class="fact-v" data-edit="focus">Desarrollo web</span></li>
-          <li><span class="fact-k">💬 Idiomas</span><span class="fact-v" data-edit="languages">Español</span></li>
-          <li><span class="fact-k">⚡ Estado</span><span class="fact-v" data-edit="status">Aprendiendo cada día</span></li>
+          <li><span class="fact-k">📍 Ubicación</span><span class="fact-v" data-edit="location">San Nicolás de los Arroyos, Argentina</span></li>
+          <li><span class="fact-k">🎯 Enfoque</span><span class="fact-v" data-edit="focus">Desarrollo web &amp; apps</span></li>
+          <li><span class="fact-k">🎓 Formación</span><span class="fact-v" data-edit="education">Tecnicatura en Electrónica</span></li>
+          <li><span class="fact-k">💬 Idiomas</span><span class="fact-v" data-edit="languages">Español (nativo) · Inglés B2</span></li>
+          <li><span class="fact-k">⚡ Estado</span><span class="fact-v" data-edit="status">Fundando Eterial Company</span></li>
         </ul>
       </div>
     </section>
@@ -100,9 +114,16 @@
     <section class="section" id="skills">
       <div class="section-head reveal">
         <span class="section-num">02</span>
-        <h2>Tecnologías</h2>
+        <h2>Habilidades</h2>
       </div>
+
+      <h3 class="skills-subtitle reveal">Tecnologías</h3>
       <div class="skills-grid reveal" id="skills-grid">
+        <!-- Se rellena desde portfolio.js -->
+      </div>
+
+      <h3 class="skills-subtitle reveal">Habilidades blandas</h3>
+      <div class="softskills reveal" id="softskills">
         <!-- Se rellena desde portfolio.js -->
       </div>
     </section>
@@ -175,7 +196,7 @@
   </main>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Thiago Torres Ortiz · Hecho con HTML, CSS y JS.</p>
+    <p>© <span id="year"></span> Thiago Torres · Eterial Company · Hecho con HTML, CSS y JS.</p>
   </footer>
 
   <script src="assets/js/portfolio.js"></script>

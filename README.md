@@ -1,4 +1,4 @@
-# Portfolio — Thiago Torres Ortiz
+# Portfolio — Thiago Torres · Eterial Company
 
 Portfolio personal hecho con **HTML + CSS + JavaScript puro** (sin dependencias
 ni build). Publicado con GitHub Pages.

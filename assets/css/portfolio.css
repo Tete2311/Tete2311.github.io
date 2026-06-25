@@ -8,41 +8,45 @@
   --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 }
 
+/* Paleta basada en psicología del color:
+   - Azul profundo  -> confianza, profesionalismo, competencia, calma
+   - Dorado/ámbar   -> sofisticación, intelecto, calidad premium (lado literario)
+   Combinación azul marino + oro = elegante y confiable. */
 [data-theme="dark"] {
-  --bg: #0a0e1a;
-  --bg-grad-1: #161d33;
-  --bg-grad-2: #0a0e1a;
-  --surface: rgba(22, 29, 51, 0.6);
-  --surface-2: rgba(15, 21, 38, 0.8);
-  --border: rgba(255, 255, 255, 0.09);
-  --text: #eef2ff;
-  --text-dim: #95a1c4;
-  --accent: #7c5cff;
-  --accent-2: #00d4ff;
-  --chip: rgba(40, 50, 80, 0.6);
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
-  --orb-1: #7c5cff;
-  --orb-2: #00d4ff;
-  --orb-3: #ff5ca8;
-  --nav-bg: rgba(10, 14, 26, 0.72);
+  --bg: #070b16;
+  --bg-grad-1: #11203f;
+  --bg-grad-2: #070b16;
+  --surface: rgba(20, 31, 58, 0.6);
+  --surface-2: rgba(11, 18, 34, 0.82);
+  --border: rgba(190, 205, 255, 0.1);
+  --text: #eaf0ff;
+  --text-dim: #95a4c6;
+  --accent: #3f7bff;
+  --accent-2: #e3b15e;
+  --chip: rgba(34, 48, 82, 0.6);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --orb-1: #2f6bff;
+  --orb-2: #e3b15e;
+  --orb-3: #5b73c9;
+  --nav-bg: rgba(7, 11, 22, 0.74);
 }
 [data-theme="light"] {
-  --bg: #eef1f9;
+  --bg: #eef2fb;
   --bg-grad-1: #ffffff;
-  --bg-grad-2: #dde5f6;
-  --surface: rgba(255, 255, 255, 0.78);
-  --surface-2: rgba(255, 255, 255, 0.95);
-  --border: rgba(20, 30, 70, 0.1);
-  --text: #131a2e;
-  --text-dim: #57617e;
-  --accent: #6a4bff;
-  --accent-2: #0094d4;
-  --chip: rgba(235, 240, 252, 0.9);
-  --shadow: 0 20px 50px rgba(60, 80, 160, 0.16);
-  --orb-1: #b3a6ff;
-  --orb-2: #7fdcff;
-  --orb-3: #ffadd2;
-  --nav-bg: rgba(255, 255, 255, 0.75);
+  --bg-grad-2: #dde6f7;
+  --surface: rgba(255, 255, 255, 0.8);
+  --surface-2: rgba(255, 255, 255, 0.96);
+  --border: rgba(20, 35, 80, 0.1);
+  --text: #111a30;
+  --text-dim: #51607e;
+  --accent: #2f63e0;
+  --accent-2: #b9842b;
+  --chip: rgba(232, 238, 252, 0.92);
+  --shadow: 0 20px 50px rgba(40, 70, 150, 0.16);
+  --orb-1: #9fbcff;
+  --orb-2: #f0d292;
+  --orb-3: #aab6e6;
+  --nav-bg: rgba(255, 255, 255, 0.78);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -127,6 +131,16 @@ main { position: relative; z-index: 1; }
   min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
   max-width: var(--max); margin: 0 auto; padding: 120px clamp(20px, 5vw, 32px) 80px;
 }
+/* avatar */
+.hero-avatar {
+  width: 96px; height: 96px; border-radius: 50%; margin-bottom: 24px;
+  display: grid; place-items: center; overflow: hidden;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 12px 30px rgba(63, 123, 255, 0.4);
+  border: 3px solid var(--surface-2);
+}
+.hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.hero-avatar-initials { font-size: 2.1rem; font-weight: 800; color: #fff; letter-spacing: 0.02em; }
 .hero-eyebrow { color: var(--accent-2); font-weight: 600; font-family: var(--font-mono); font-size: 0.95rem; margin-bottom: 14px; }
 .hero-title {
   font-size: clamp(2.6rem, 8vw, 5rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em;
@@ -176,7 +190,18 @@ main { position: relative; z-index: 1; }
 .fact-v { font-weight: 600; font-size: 0.9rem; text-align: right; }
 
 /* ===================== SKILLS ===================== */
+.skills-subtitle { font-size: 1.05rem; font-weight: 700; color: var(--text-dim); margin: 0 0 16px; }
+.skills-subtitle:not(:first-of-type) { margin-top: 36px; }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 14px; }
+.softskills { display: flex; flex-wrap: wrap; gap: 11px; }
+.softskill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 30px;
+  padding: 10px 18px; font-weight: 600; font-size: 0.92rem; transition: var(--transition);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.softskill:hover { transform: translateY(-2px); border-color: var(--accent-2); color: var(--text); }
+.softskill-ico { color: var(--accent-2); font-weight: 800; }
 .skill {
   display: flex; align-items: center; gap: 11px;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
