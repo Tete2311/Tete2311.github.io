@@ -31,10 +31,16 @@
     </nav>
     <div class="nav-actions">
       <button id="theme-toggle" class="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema">
-        <span class="theme-icon sun">☀</span>
-        <span class="theme-icon moon">☾</span>
+        <span class="theme-icon sun">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </span>
+        <span class="theme-icon moon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
       </button>
-      <button id="nav-burger" class="nav-burger" aria-label="Menú">☰</button>
+      <button id="nav-burger" class="nav-burger" aria-label="Menú">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </header>
 
@@ -47,7 +53,10 @@
           <!-- Para usar tu foto: reemplazá las iniciales de arriba por
                <img src="assets/img/perfil.jpg" alt="Thiago Torres" /> -->
         </div>
-        <p class="hero-eyebrow">👋 Hola, soy</p>
+        <p class="hero-eyebrow">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5c0-5.523 0-10 0-10z"/><path d="M8.5 8.5a2.5 2.5 0 0 0 0 5"/><path d="M15.5 15.5a2.5 2.5 0 0 0 0-5"/></svg>
+          Hola, soy
+        </p>
         <h1 class="hero-title" data-edit="name">Thiago Torres</h1>
         <h2 class="hero-role">
           <span data-edit="role">Desarrollador Web · Fundador de Eterial Company</span>
@@ -71,7 +80,9 @@
           </a>
         </div>
       </div>
-      <a href="#about" class="scroll-hint" aria-label="Bajar">⌄</a>
+      <a href="#about" class="scroll-hint" aria-label="Bajar">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </a>
     </section>
 
     <!-- ===================== ABOUT ===================== -->
@@ -101,11 +112,26 @@
           </p>
         </div>
         <ul class="about-facts">
-          <li><span class="fact-k">📍 Ubicación</span><span class="fact-v" data-edit="location">San Nicolás de los Arroyos, Argentina</span></li>
-          <li><span class="fact-k">🎯 Enfoque</span><span class="fact-v" data-edit="focus">Desarrollo web &amp; apps</span></li>
-          <li><span class="fact-k">🎓 Formación</span><span class="fact-v" data-edit="education">Tecnicatura en Electrónica</span></li>
-          <li><span class="fact-k">💬 Idiomas</span><span class="fact-v" data-edit="languages">Español (nativo) · Inglés B2</span></li>
-          <li><span class="fact-k">⚡ Estado</span><span class="fact-v" data-edit="status">Fundando Eterial Company</span></li>
+          <li><span class="fact-k">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ubicación
+          </span><span class="fact-v" data-edit="location">San Nicolás de los Arroyos, Argentina</span></li>
+          <li><span class="fact-k">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            Enfoque
+          </span><span class="fact-v" data-edit="focus">Desarrollo web &amp; apps</span></li>
+          <li><span class="fact-k">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Formación
+          </span><span class="fact-v" data-edit="education">Tecnicatura en Electrónica</span></li>
+          <li><span class="fact-k">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Idiomas
+          </span><span class="fact-v" data-edit="languages">Español (nativo) · Inglés B2</span></li>
+          <li><span class="fact-k">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Estado
+          </span><span class="fact-v" data-edit="status">Fundando Eterial Company</span></li>
         </ul>
       </div>
     </section>
@@ -148,7 +174,10 @@
             </div>
           </div>
           <div class="project-body">
-            <div class="project-tag">⭐ Destacado</div>
+            <div class="project-tag">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" style="display:inline;vertical-align:middle;margin-right:4px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Destacado
+            </div>
             <h3>Calculadora Pro</h3>
             <p>
               Calculadora científica web: aritmética, modo científico, evaluador
@@ -168,7 +197,9 @@
         <!-- Placeholder de próximo proyecto -->
         <article class="project-card placeholder reveal">
           <div class="project-media">
-            <div class="project-thumb soon-thumb">＋</div>
+            <div class="project-thumb soon-thumb">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
           </div>
           <div class="project-body">
             <h3>Próximo proyecto</h3>
