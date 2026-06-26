@@ -1141,7 +1141,7 @@ section {
 
 /* ===================== DEMO CARD FOOTER ===================== */
 .demo-card-footer {
-    margin-top: auto;
+    margin-top: 15px;
     padding-top: 20px;
     width: 100%;
     display: flex;
@@ -1154,9 +1154,9 @@ section {
     justify-content: center;
     gap: 8px;
     width: 100%;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 50px;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
