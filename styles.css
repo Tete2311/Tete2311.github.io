@@ -1141,47 +1141,40 @@ section {
 
 /* ===================== DEMO CARD FOOTER ===================== */
 .demo-card-footer {
-    margin-top: 15px;
+    margin-top: auto;
     padding-top: 20px;
     width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
-.btn-demo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+.btn-demo-final {
     width: 100%;
-    padding: 10px 20px;
-    border-radius: 50px;
+    padding: 10px 15px;
     font-size: 0.85rem;
     font-weight: 600;
-    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    background: transparent;
+    color: #ffffff;
     cursor: none !important;
 }
 
-/* Estado Activo (Ver Demo) */
-.btn-demo.active {
-    background: rgba(255, 255, 255, 0.05);
-    color: #ffffff !important;
-    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
-}
-.btn-demo.active:hover {
-    background: #ffffff;
-    color: #000000 !important;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+.btn-demo-final.active {
+    background: rgba(255, 255, 255, 0.1);
 }
 
-/* Estado Desactivado (Próximamente) */
-.btn-demo.disabled {
-    background: rgba(255, 255, 255, 0.02);
-    color: rgba(255, 255, 255, 0.3) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.btn-demo-final.active:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-demo-final.disabled {
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.3);
+    border-style: dashed;
     cursor: not-allowed;
 }
 
