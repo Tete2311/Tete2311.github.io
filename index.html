@@ -7,10 +7,16 @@
   <meta name="description" content="Transformamos código en facturación para tu negocio. Desarrollo web, aplicaciones a medida y automatizaciones para PyMEs y empresas locales." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="glow-background">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <nav class="navbar" id="navbar">
@@ -49,21 +55,21 @@
         <div class="services-grid">
           <div class="service-card reveal">
             <div class="service-icon">
-              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              <i data-lucide="layout" width="48" height="48"></i>
             </div>
             <h3>Páginas Web Corporativas</h3>
             <p>Presencia digital de alto impacto que genera confianza y convierte visitantes en clientes.</p>
           </div>
           <div class="service-card reveal">
             <div class="service-icon">
-              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 4v16"/><path d="M4 12h16"/></svg>
+              <i data-lucide="smartphone" width="48" height="48"></i>
             </div>
             <h3>Aplicaciones a Medida</h3>
             <p>Software específico diseñado para optimizar tus procesos y escalar tu operación.</p>
           </div>
           <div class="service-card reveal">
             <div class="service-icon">
-              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l1.41-1.41M16.24 7.76l1.41-1.41"/></svg>
+              <i data-lucide="zap" width="48" height="48"></i>
             </div>
             <h3>Automatizaciones y Sistemas</h3>
             <p>Ahorro de tiempo y reducción de costos mediante automatización inteligente de tareas.</p>
@@ -146,5 +152,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
