@@ -18,6 +18,9 @@
   --accent-glow: rgba(59, 130, 246, 0.4);
   --accent-glow-strong: rgba(99, 102, 241, 0.6);
   --whatsapp: #25D366;
+  --github-bg: #24292e;
+  --instagram-gradient: linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d, #f56040);
+  --email-color: #EA4335;
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
   --max-width: 1200px;
   --radius: 12px;
@@ -927,6 +930,78 @@ section {
   background: rgba(239, 68, 68, 0.1);
   color: #EF4444;
   border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ===================== SOCIAL BUTTONS ===================== */
+.contact-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  border: none;
+  font-family: var(--font-family);
+  position: relative;
+  overflow: hidden;
+  cursor: none !important;
+}
+
+.btn-social::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.btn-social:hover::before {
+  opacity: 1;
+}
+
+.btn-github {
+  background: var(--github-bg);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(36, 41, 46, 0.3);
+}
+
+.btn-github:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(36, 41, 46, 0.5), 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.btn-instagram {
+  background: var(--instagram-gradient);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(193, 53, 132, 0.3);
+}
+
+.btn-instagram:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193, 53, 132, 0.5), 0 0 30px rgba(131, 58, 180, 0.4);
+}
+
+.btn-email {
+  background: var(--email-color);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(234, 67, 53, 0.3);
+}
+
+.btn-email:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(234, 67, 53, 0.5), 0 0 30px rgba(234, 67, 53, 0.4);
 }
 
 /* ===================== FOOTER ===================== */
