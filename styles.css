@@ -52,6 +52,51 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: none;
+}
+
+/* ===================== CUSTOM CURSOR ===================== */
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-violet);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+.cursor-circle {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent-blue);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.cursor-circle.hovered {
+  width: 60px;
+  height: 60px;
+  border-color: var(--accent-violet);
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+/* Hide default cursor on interactive elements */
+a, button, .service-card, .project-card, .nav-links a, .btn, input, textarea {
+  cursor: none !important;
 }
 
 /* ===================== GLOW BACKGROUND ===================== */
@@ -484,6 +529,11 @@ section {
   transition: var(--transition-smooth);
   position: relative;
   overflow: hidden;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .service-card::before {
@@ -562,6 +612,11 @@ section {
   -webkit-backdrop-filter: blur(16px);
   transition: var(--transition-smooth);
   position: relative;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .project-card::before {
@@ -621,6 +676,148 @@ section {
   margin-bottom: 24px;
   line-height: 1.7;
   font-size: 1rem;
+}
+
+/* ===================== PROCESS SECTION ===================== */
+.process {
+  background: var(--bg-secondary);
+}
+
+.process-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.process-step {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 2px solid var(--accent-violet);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent-violet);
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.step-content {
+  flex: 1;
+  padding-top: 8px;
+}
+
+.step-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.step-content p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+/* ===================== FAQ SECTION ===================== */
+.faq {
+  background: var(--bg-primary);
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: var(--transition-smooth);
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.faq-item:hover {
+  border-color: var(--border-hover);
+}
+
+.faq-details {
+  width: 100%;
+}
+
+.faq-question {
+  padding: 24px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: var(--transition);
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question:hover {
+  color: var(--accent-violet);
+}
+
+.faq-question i {
+  transition: var(--transition);
+  color: var(--accent-blue);
+}
+
+.faq-details[open] .faq-question i {
+  transform: rotate(180deg);
+  color: var(--accent-violet);
+}
+
+.faq-answer {
+  padding: 0 32px 24px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-size: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===================== CONTACT SECTION ===================== */

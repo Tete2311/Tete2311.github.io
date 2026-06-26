@@ -1,3 +1,47 @@
+// ===================== CUSTOM CURSOR =====================
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorCircle = document.querySelector('.cursor-circle');
+
+let cursorX = 0;
+let cursorY = 0;
+let circleX = 0;
+let circleY = 0;
+
+function initCustomCursor() {
+  document.addEventListener('mousemove', (e) => {
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+  });
+
+  // Add hover effect to interactive elements
+  const interactiveElements = document.querySelectorAll('a, button, .service-card, .project-card, .nav-links a, .btn, .faq-question');
+  interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursorCircle.classList.add('hovered');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursorCircle.classList.remove('hovered');
+    });
+  });
+
+  // Animate cursor
+  animateCursor();
+}
+
+function animateCursor() {
+  // Smooth trailing effect for circle
+  circleX += (cursorX - circleX) * 0.15;
+  circleY += (cursorY - circleY) * 0.15;
+
+  cursorDot.style.left = cursorX - 4 + 'px';
+  cursorDot.style.top = cursorY - 4 + 'px';
+
+  cursorCircle.style.left = circleX - 20 + 'px';
+  cursorCircle.style.top = circleY - 20 + 'px';
+
+  requestAnimationFrame(animateCursor);
+}
+
 // ===================== CANVAS BACKGROUND ANIMATION =====================
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
@@ -210,6 +254,9 @@ function updateYear() {
 
 // ===================== INITIALIZATION =====================
 function init() {
+  // Custom cursor
+  initCustomCursor();
+  
   // Canvas setup
   resizeCanvas();
   initParticles();
