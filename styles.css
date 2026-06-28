@@ -220,9 +220,10 @@ a, button, .service-card, .project-card, .nav-links a, .btn, input, textarea {
 }
 
 .logo-image {
-  height: 40px;
+  height: 32px;
   width: auto;
   display: block;
+  max-width: 150px;
 }
 
 .logo-text {
