@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Demos - Eterial Company</title>
+  <meta name="description" content="Explorá nuestras demos interactivas y testea el software en tiempo real." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="glow-background">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  
+  <div class="cursor-dot"></div>
+  <div class="cursor-circle"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Eterial Company</a>
+      <div class="nav-links">
+        <a href="index.html" class="btn btn-secondary btn-sm">
+          <i data-lucide="arrow-left" width="16" height="16" style="margin-right: 6px;"></i>
+          Volver al Inicio
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" style="min-height: 60vh; padding: 120px 24px 80px;">
+      <div class="hero-content">
+        <h1 class="hero-title">Explorá Nuestras Demos Interactivas</h1>
+        <p class="hero-subtitle">Testea el software en tiempo real y elegí la solución ideal para tu negocio.</p>
+      </div>
+    </section>
+
+    <section class="catalog-section">
+      <div class="container">
+        <div class="search-container reveal" style="max-width: 600px; margin: 0 auto 48px;">
+          <div class="search-wrapper" style="position: relative;">
+            <input type="text" id="search-input" placeholder="Buscar demos..." style="width: 100%; padding: 16px 20px 16px 52px; background: var(--surface); border: 1px solid var(--border); border-radius: 50px; color: var(--text-primary); font-family: var(--font-family); font-size: 1rem; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: var(--transition-smooth); cursor: none !important;" />
+            <i data-lucide="search" width="20" height="20" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <div class="filters-container reveal" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px;">
+          <button class="filter-btn active" data-filter="all">Todas</button>
+          <button class="filter-btn" data-filter="inmobiliarias">Inmobiliarias</button>
+          <button class="filter-btn" data-filter="gastronomia">Gastronomía</button>
+          <button class="filter-btn" data-filter="sistemas">Sistemas</button>
+        </div>
+
+        <div class="catalog-grid" id="catalog-grid">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Eterial Company. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+
+    const searchInput = document.getElementById('search-input');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const catalogGrid = document.getElementById('catalog-grid');
+
+    searchInput.addEventListener('focus', function() {
+      this.style.borderColor = 'var(--accent-violet)';
+      this.style.boxShadow = '0 0 0 4px rgba(99, 102, 241, 0.15)';
+    });
+
+    searchInput.addEventListener('blur', function() {
+      this.style.borderColor = 'var(--border)';
+      this.style.boxShadow = 'none';
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <style>
+    .filter-btn {
+      padding: 10px 24px;
+      border-radius: 50px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-family: var(--font-family);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: none !important;
+      transition: var(--transition-smooth);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent-violet);
+      color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-gradient);
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .catalog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>
