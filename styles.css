@@ -211,16 +211,35 @@ a, button, .service-card, .project-card, .nav-links a, .btn, input, textarea {
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition);
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.logo-text {
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--text-primary);
-  text-decoration: none;
   letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+}
+
+.logo-highlight {
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
+  margin-left: 4px;
 }
 
 .nav-links {
