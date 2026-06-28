@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eterial Company - Sistema Inmobiliario Inteligente</title>
+  <meta name="description" content="Demo del Sistema Inmobiliario Inteligente de Eterial Company" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-icon">🏠</span>
+          <span class="logo-text">Eterial Inmobiliaria</span>
+        </div>
+        <nav class="nav">
+          <a href="#buscador" class="nav-link">Buscar</a>
+          <a href="#propiedades" class="nav-link">Propiedades</a>
+          <a href="#contacto" class="nav-link">Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Encuentra tu hogar ideal</h1>
+        <p class="hero-subtitle">Sistema Inmobiliario Inteligente de Eterial Company</p>
+        <a href="#buscador" class="btn btn-primary">Comenzar búsqueda</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buscador -->
+  <section class="section" id="buscador">
+    <div class="container">
+      <div class="search-box">
+        <h2 class="section-title">Buscador de Propiedades</h2>
+        <form class="search-form" id="searchForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tipo">Tipo de propiedad</label>
+              <select id="tipo" name="tipo">
+                <option value="">Todos</option>
+                <option value="casa">Casa</option>
+                <option value="departamento">Departamento</option>
+                <option value="terreno">Terreno</option>
+                <option value="local">Local Comercial</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="operacion">Operación</label>
+              <select id="operacion" name="operacion">
+                <option value="">Todas</option>
+                <option value="venta">Venta</option>
+                <option value="alquiler">Alquiler</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ubicacion">Ubicación</label>
+              <input type="text" id="ubicacion" name="ubicacion" placeholder="Ciudad o barrio" />
+            </div>
+            <div class="form-group">
+              <label for="precio-min">Precio mínimo</label>
+              <input type="number" id="precio-min" name="precio-min" placeholder="USD" />
+            </div>
+            <div class="form-group">
+              <label for="precio-max">Precio máximo</label>
+              <input type="number" id="precio-max" name="precio-max" placeholder="USD" />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Buscar propiedades</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Propiedades -->
+  <section class="section" id="propiedades">
+    <div class="container">
+      <h2 class="section-title">Propiedades Destacadas</h2>
+      <div class="properties-grid" id="propertiesGrid">
+        <!-- Las propiedades se cargan dinámicamente -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Consulta -->
+  <div class="modal" id="modalConsulta">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <h3 class="modal-title">Consultar propiedad</h3>
+      <form class="contact-form" id="contactForm">
+        <input type="hidden" id="propiedadId" name="propiedadId" />
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Enviar consulta por WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Éxito -->
+  <div class="modal" id="modalExito">
+    <div class="modal-content modal-success">
+      <button class="modal-close" id="modalExitoClose">&times;</button>
+      <div class="success-icon">✓</div>
+      <h3 class="modal-title">¡Consulta enviada!</h3>
+      <p>Tu consulta ha sido derivada correctamente. Te contactaremos pronto.</p>
+      <button class="btn btn-primary btn-full" id="btnCerrarExito">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Contacto -->
+  <section class="section section-dark" id="contacto">
+    <div class="container">
+      <div class="contact-card">
+        <h2 class="section-title">¿Necesitas ayuda?</h2>
+        <p class="contact-text">Estamos aquí para ayudarte a encontrar la propiedad perfecta.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <span>contacto@eterialcompany.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📱</span>
+            <span>+54 9 11 1234-5678</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🌐</span>
+            <span>www.eterialcompany.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Eterial Company - Sistema Inmobiliario Inteligente</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
