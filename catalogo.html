@@ -115,7 +115,99 @@
     const searchInput = document.getElementById('search-input');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const catalogGrid = document.getElementById('catalog-grid');
+    const projectCards = document.querySelectorAll('.project-card');
 
+    // Datos de las demos para filtrado
+    const demos = [
+      {
+        id: 1,
+        titulo: 'Sistema Inmobiliario Inteligente',
+        categoria: 'inmobiliarias',
+        descripcion: 'Catálogo de propiedades interactivo con filtros avanzados y derivación automática de consultas estructuradas hacia WhatsApp.',
+        disponible: true
+      },
+      {
+        id: 2,
+        titulo: 'Gestor de Turnos para Clínicas y Estéticas',
+        categoria: 'sistemas',
+        descripcion: 'Plataforma de reservas optimizada para que los pacientes agenden sus citas las 24 horas, sincronizando agendas de profesionales automáticamente.',
+        disponible: false
+      },
+      {
+        id: 3,
+        titulo: 'Sistema de Pedidos Gastronómicos',
+        categoria: 'gastronomia',
+        descripcion: 'Menú digital interactivo para restaurantes y bares que automatiza la toma de pedidos, calcula subtotales y envía la comanda lista para despachar.',
+        disponible: false
+      }
+    ];
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    // Filtrar demos
+    function filterDemos() {
+      const filteredDemos = demos.filter(demo => {
+        const matchesFilter = currentFilter === 'all' || demo.categoria === currentFilter;
+        const matchesSearch = currentSearch === '' || 
+          demo.titulo.toLowerCase().includes(currentSearch.toLowerCase()) ||
+          demo.descripcion.toLowerCase().includes(currentSearch.toLowerCase());
+        return matchesFilter && matchesSearch;
+      });
+
+      // Actualizar visibilidad de las tarjetas
+      projectCards.forEach((card, index) => {
+        const demo = demos[index];
+        const isMatch = filteredDemos.some(d => d.id === demo.id);
+        
+        if (isMatch) {
+          card.style.display = 'block';
+          card.style.opacity = '0';
+          setTimeout(() => {
+            card.style.opacity = '1';
+          }, 50);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Mostrar mensaje si no hay resultados
+      const noResults = document.querySelector('.no-results-message');
+      if (noResults) {
+        noResults.remove();
+      }
+
+      if (filteredDemos.length === 0) {
+        const noResultsDiv = document.createElement('div');
+        noResultsDiv.className = 'no-results-message';
+        noResultsDiv.style.cssText = 'grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--text-secondary);';
+        noResultsDiv.innerHTML = `
+          <i data-lucide="search" width="48" height="48" style="margin-bottom: 16px; opacity: 0.5;"></i>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">No se encontraron demos</h3>
+          <p style="opacity: 0.7;">Intenta con otros filtros o términos de búsqueda</p>
+        `;
+        catalogGrid.appendChild(noResultsDiv);
+        lucide.createIcons();
+      }
+    }
+
+    // Event listener para búsqueda
+    searchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value;
+      filterDemos();
+    });
+
+    // Event listeners para filtros
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        filterDemos();
+      });
+    });
+
+    // Focus/blur effects
     searchInput.addEventListener('focus', function() {
       this.style.borderColor = 'var(--accent-violet)';
       this.style.boxShadow = '0 0 0 4px rgba(99, 102, 241, 0.15)';
@@ -124,13 +216,6 @@
     searchInput.addEventListener('blur', function() {
       this.style.borderColor = 'var(--border)';
       this.style.boxShadow = 'none';
-    });
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();

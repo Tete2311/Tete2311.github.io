@@ -3,164 +3,606 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eterial Company - Sistema Inmobiliario Inteligente</title>
-  <meta name="description" content="Demo del Sistema Inmobiliario Inteligente de Eterial Company" />
+  <title>LuxeEstate - Sistema Inmobiliario Premium</title>
+  <meta name="description" content="Sistema Inmobiliario Inteligente de Eterial Company - Experiencia premium en búsqueda de propiedades" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header Premium -->
   <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <div class="logo">
-          <span class="logo-icon">🏠</span>
-          <span class="logo-text">Eterial Inmobiliaria</span>
+    <div class="header-top">
+      <div class="container">
+        <div class="header-contact">
+          <span><i class="fas fa-phone"></i> +54 9 11 5555-1234</span>
+          <span><i class="fas fa-envelope"></i> contacto@luxeestate.com</span>
         </div>
-        <nav class="nav">
-          <a href="#buscador" class="nav-link">Buscar</a>
-          <a href="#propiedades" class="nav-link">Propiedades</a>
-          <a href="#contacto" class="nav-link">Contacto</a>
-        </nav>
+        <div class="header-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container">
+        <div class="header-inner">
+          <div class="logo">
+            <i class="fas fa-crown"></i>
+            <span>Luxe<span class="logo-accent">Estate</span></span>
+          </div>
+          <nav class="nav">
+            <a href="#inicio" class="nav-link active">Inicio</a>
+            <a href="#propiedades" class="nav-link">Propiedades</a>
+            <a href="#servicios" class="nav-link">Servicios</a>
+            <a href="#nosotros" class="nav-link">Nosotros</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+          </nav>
+          <button class="btn-premium">
+            <i class="fas fa-user"></i>
+            <span>Área Clientes</span>
+          </button>
+          <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-bg"></div>
+  <!-- Hero Section Premium -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-house-with-pool-32808-large.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="container">
       <div class="hero-content">
-        <h1 class="hero-title">Encuentra tu hogar ideal</h1>
-        <p class="hero-subtitle">Sistema Inmobiliario Inteligente de Eterial Company</p>
-        <a href="#buscador" class="btn btn-primary">Comenzar búsqueda</a>
+        <div class="hero-badge">
+          <i class="fas fa-star"></i>
+          <span>Experiencia Premium en Bienes Raíces</span>
+        </div>
+        <h1 class="hero-title">Encuentra la Propiedad de tus Sueños</h1>
+        <p class="hero-subtitle">Más de 500 propiedades exclusivas en las zonas más prestigiosas. Tu próximo hogar te espera.</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Propiedades</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Satisfacción</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Soporte</span>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a href="#propiedades" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+            <span>Explorar Propiedades</span>
+          </a>
+          <a href="#contacto" class="btn btn-secondary">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Agendar Visita</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Buscador -->
-  <section class="section" id="buscador">
+  <!-- Buscador Avanzado -->
+  <section class="search-section">
     <div class="container">
-      <div class="search-box">
-        <h2 class="section-title">Buscador de Propiedades</h2>
+      <div class="search-container">
+        <div class="search-tabs">
+          <button class="search-tab active" data-tab="comprar">
+            <i class="fas fa-home"></i>
+            <span>Comprar</span>
+          </button>
+          <button class="search-tab" data-tab="alquilar">
+            <i class="fas fa-key"></i>
+            <span>Alquilar</span>
+          </button>
+          <button class="search-tab" data-tab="invertir">
+            <i class="fas fa-chart-line"></i>
+            <span>Invertir</span>
+          </button>
+        </div>
         <form class="search-form" id="searchForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="tipo">Tipo de propiedad</label>
-              <select id="tipo" name="tipo">
-                <option value="">Todos</option>
+          <div class="search-row">
+            <div class="search-field">
+              <label><i class="fas fa-map-marker-alt"></i> Ubicación</label>
+              <input type="text" id="ubicacion" placeholder="Ciudad, barrio o dirección" />
+            </div>
+            <div class="search-field">
+              <label><i class="fas fa-building"></i> Tipo</label>
+              <select id="tipo">
+                <option value="">Todos los tipos</option>
                 <option value="casa">Casa</option>
                 <option value="departamento">Departamento</option>
+                <option value="penthouse">Penthouse</option>
+                <option value="chalet">Chalet</option>
                 <option value="terreno">Terreno</option>
                 <option value="local">Local Comercial</option>
+                <option value="oficina">Oficina</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="operacion">Operación</label>
-              <select id="operacion" name="operacion">
-                <option value="">Todas</option>
-                <option value="venta">Venta</option>
-                <option value="alquiler">Alquiler</option>
+            <div class="search-field">
+              <label><i class="fas fa-bed"></i> Habitaciones</label>
+              <select id="habitaciones">
+                <option value="">Cualquiera</option>
+                <option value="1">1+</option>
+                <option value="2">2+</option>
+                <option value="3">3+</option>
+                <option value="4">4+</option>
+                <option value="5">5+</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="ubicacion">Ubicación</label>
-              <input type="text" id="ubicacion" name="ubicacion" placeholder="Ciudad o barrio" />
+            <div class="search-field">
+              <label><i class="fas fa-dollar-sign"></i> Precio Max</label>
+              <select id="precio-max">
+                <option value="">Sin límite</option>
+                <option value="100000">$100,000</option>
+                <option value="200000">$200,000</option>
+                <option value="300000">$300,000</option>
+                <option value="500000">$500,000</option>
+                <option value="750000">$750,000</option>
+                <option value="1000000">$1,000,000</option>
+                <option value="2000000">$2,000,000+</option>
+              </select>
             </div>
-            <div class="form-group">
-              <label for="precio-min">Precio mínimo</label>
-              <input type="number" id="precio-min" name="precio-min" placeholder="USD" />
-            </div>
-            <div class="form-group">
-              <label for="precio-max">Precio máximo</label>
-              <input type="number" id="precio-max" name="precio-max" placeholder="USD" />
+            <button type="submit" class="btn btn-search">
+              <i class="fas fa-search"></i>
+              <span>Buscar</span>
+            </button>
+          </div>
+          <div class="search-advanced">
+            <button type="button" class="btn-advanced-toggle">
+              <i class="fas fa-sliders-h"></i>
+              <span>Filtros Avanzados</span>
+            </button>
+            <div class="advanced-filters">
+              <div class="filter-group">
+                <label>Baños</label>
+                <select id="banos">
+                  <option value="">Cualquiera</option>
+                  <option value="1">1+</option>
+                  <option value="2">2+</option>
+                  <option value="3">3+</option>
+                  <option value="4">4+</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>Metros Mínimos</label>
+                <select id="metros-min">
+                  <option value="">Cualquiera</option>
+                  <option value="50">50m²</option>
+                  <option value="100">100m²</option>
+                  <option value="150">150m²</option>
+                  <option value="200">200m²</option>
+                  <option value="300">300m²+</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>Garaje</label>
+                <select id="garaje">
+                  <option value="">Cualquiera</option>
+                  <option value="1">1 cochera</option>
+                  <option value="2">2 cocheras</option>
+                  <option value="3">3+ cocheras</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>Características</label>
+                <div class="checkbox-group">
+                  <label><input type="checkbox" value="piscina"> Piscina</label>
+                  <label><input type="checkbox" value="jardin"> Jardín</label>
+                  <label><input type="checkbox" value="gimnasio"> Gimnasio</label>
+                  <label><input type="checkbox" value="seguridad"> Seguridad 24h</label>
+                </div>
+              </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">Buscar propiedades</button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- Propiedades -->
+  <!-- Propiedades Destacadas -->
   <section class="section" id="propiedades">
     <div class="container">
-      <h2 class="section-title">Propiedades Destacadas</h2>
+      <div class="section-header">
+        <h2 class="section-title">Propiedades Destacadas</h2>
+        <p class="section-subtitle">Selección exclusiva de propiedades premium en las mejores ubicaciones</p>
+      </div>
+      
+      <div class="properties-toolbar">
+        <div class="results-count">
+          <span id="resultsCount">12</span> propiedades encontradas
+        </div>
+        <div class="view-options">
+          <button class="view-btn active" data-view="grid">
+            <i class="fas fa-th"></i>
+          </button>
+          <button class="view-btn" data-view="list">
+            <i class="fas fa-list"></i>
+          </button>
+        </div>
+        <div class="sort-options">
+          <select id="sortBy">
+            <option value="featured">Destacados</option>
+            <option value="price-asc">Precio: Menor a Mayor</option>
+            <option value="price-desc">Precio: Mayor a Menor</option>
+            <option value="newest">Más recientes</option>
+            <option value="size">Metros cuadrados</option>
+          </select>
+        </div>
+      </div>
+
       <div class="properties-grid" id="propertiesGrid">
         <!-- Las propiedades se cargan dinámicamente -->
+      </div>
+
+      <div class="pagination">
+        <button class="pagination-btn prev" disabled>
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="pagination-btn active">1</button>
+        <button class="pagination-btn">2</button>
+        <button class="pagination-btn">3</button>
+        <button class="pagination-btn next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   </section>
 
+  <!-- Servicios -->
+  <section class="section section-alt" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestros Servicios Premium</h2>
+        <p class="section-subtitle">Soluciones integrales para todas tus necesidades inmobiliarias</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3>Compra y Venta</h3>
+          <p>Asesoramiento completo en transacciones de propiedades residenciales y comerciales.</p>
+          <a href="#" class="service-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-key"></i>
+          </div>
+          <h3>Alquileres</h3>
+          <p>Gestión integral de alquileres con garantía y mantenimiento incluido.</p>
+          <a href="#" class="service-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Inversiones</h3>
+          <p>Análisis de oportunidades de inversión y maximización de rendimientos.</p>
+          <a href="#" class="service-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-gavel"></i>
+          </div>
+          <h3>Tasaciones</h3>
+          <p>Valuaciones profesionales con certificación internacional.</p>
+          <a href="#" class="service-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section class="section" id="nosotros">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <div class="section-header">
+            <h2 class="section-title">¿Por qué elegir LuxeEstate?</h2>
+            <p class="section-subtitle">Más de 15 años de experiencia en el mercado inmobiliario premium</p>
+          </div>
+          <div class="features-list">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Seguridad Garantizada</h4>
+                <p>Todas nuestras transacciones están respaldadas por seguros y garantías legales.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Atención Personalizada</h4>
+                <p>Asignamos un agente exclusivo para acompañarte en todo el proceso.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Red Global</h4>
+                <p>Acceso a propiedades exclusivas en todo el país y el extranjero.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Proceso Ágil</h4>
+                <p>Cerramos transacciones en tiempo récord sin sacrificar calidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <div class="image-wrapper">
+            <div class="image-card">
+              <div class="image-overlay">
+                <div class="image-stats">
+                  <div>
+                    <span class="stat-number">15+</span>
+                    <span>Años de experiencia</span>
+                  </div>
+                  <div>
+                    <span class="stat-number">2000+</span>
+                    <span>Clientes satisfechos</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="section section-dark" id="contacto">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h2 class="section-title">Contáctanos</h2>
+          <p class="section-subtitle">Estamos listos para ayudarte a encontrar la propiedad perfecta</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Oficina Principal</h4>
+                <p>Av. Libertador 1234, Piso 15<br>Buenos Aires, Argentina</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Teléfono</h4>
+                <p>+54 9 11 5555-1234<br>Lun-Vie: 9:00 - 18:00</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <p>contacto@luxeestate.com<br>info@luxeestate.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="#" class="social-btn">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-btn">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="social-btn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-btn">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="mainContactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" placeholder="Nombre completo" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="tel" placeholder="Teléfono" required />
+              </div>
+              <div class="form-group">
+                <select>
+                  <option value="">Tipo de consulta</option>
+                  <option value="compra">Comprar propiedad</option>
+                  <option value="venta">Vender propiedad</option>
+                  <option value="alquiler">Alquilar</option>
+                  <option value="inversion">Inversión</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="¿Cómo podemos ayudarte?" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i>
+              <span>Enviar Mensaje</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Detalle de Propiedad -->
+  <div class="modal" id="propertyModal">
+    <div class="modal-content modal-large">
+      <button class="modal-close" id="propertyModalClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="property-detail" id="propertyDetail">
+        <!-- Contenido dinámico -->
+      </div>
+    </div>
+  </div>
+
   <!-- Modal de Consulta -->
-  <div class="modal" id="modalConsulta">
+  <div class="modal" id="inquiryModal">
     <div class="modal-content">
-      <button class="modal-close" id="modalClose">&times;</button>
-      <h3 class="modal-title">Consultar propiedad</h3>
-      <form class="contact-form" id="contactForm">
-        <input type="hidden" id="propiedadId" name="propiedadId" />
+      <button class="modal-close" id="inquiryModalClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="inquiry-header">
+        <i class="fas fa-envelope-open-text"></i>
+        <h3>Consultar Propiedad</h3>
+        <p>Completa el formulario y te contactaremos a la brevedad</p>
+      </div>
+      <form class="inquiry-form" id="inquiryForm">
+        <input type="hidden" id="inquiryPropertyId" />
         <div class="form-group">
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" name="nombre" required />
+          <label>Nombre completo</label>
+          <input type="text" id="inquiryName" required />
         </div>
         <div class="form-group">
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono" required />
+          <label>Teléfono</label>
+          <input type="tel" id="inquiryPhone" required />
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+          <label>Email</label>
+          <input type="email" id="inquiryEmail" required />
         </div>
         <div class="form-group">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <label>Mensaje</label>
+          <textarea id="inquiryMessage" rows="4" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-full">Enviar consulta por WhatsApp</button>
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" required />
+            Acepto la política de privacidad
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <i class="fab fa-whatsapp"></i>
+          <span>Enviar por WhatsApp</span>
+        </button>
       </form>
     </div>
   </div>
 
   <!-- Modal de Éxito -->
-  <div class="modal" id="modalExito">
+  <div class="modal" id="successModal">
     <div class="modal-content modal-success">
-      <button class="modal-close" id="modalExitoClose">&times;</button>
-      <div class="success-icon">✓</div>
-      <h3 class="modal-title">¡Consulta enviada!</h3>
-      <p>Tu consulta ha sido derivada correctamente. Te contactaremos pronto.</p>
-      <button class="btn btn-primary btn-full" id="btnCerrarExito">Cerrar</button>
+      <button class="modal-close" id="successModalClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="success-content">
+        <div class="success-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>¡Consulta Enviada!</h3>
+        <p>Tu consulta ha sido derivada correctamente a nuestro equipo. Te contactaremos en menos de 24 horas.</p>
+        <button class="btn btn-primary" id="successModalBtn">
+          <i class="fas fa-check"></i>
+          <span>Entendido</span>
+        </button>
+      </div>
     </div>
   </div>
 
-  <!-- Contacto -->
-  <section class="section section-dark" id="contacto">
-    <div class="container">
-      <div class="contact-card">
-        <h2 class="section-title">¿Necesitas ayuda?</h2>
-        <p class="contact-text">Estamos aquí para ayudarte a encontrar la propiedad perfecta.</p>
-        <div class="contact-info">
-          <div class="contact-item">
-            <span class="contact-icon">📧</span>
-            <span>contacto@eterialcompany.com</span>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <i class="fas fa-crown"></i>
+              <span>Luxe<span class="logo-accent">Estate</span></span>
+            </div>
+            <p class="footer-description">Líderes en el mercado inmobiliario premium desde 2011. Tu confianza es nuestra prioridad.</p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">📱</span>
-            <span>+54 9 11 1234-5678</span>
+          <div class="footer-col">
+            <h4>Propiedades</h4>
+            <ul>
+              <li><a href="#">Casas en Venta</a></li>
+              <li><a href="#">Departamentos</a></li>
+              <li><a href="#">Terrenos</a></li>
+              <li><a href="#">Propiedades de Lujo</a></li>
+              <li><a href="#">Oportunidades</a></li>
+            </ul>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">🌐</span>
-            <span>www.eterialcompany.com</span>
+          <div class="footer-col">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="#">Compra y Venta</a></li>
+              <li><a href="#">Alquileres</a></li>
+              <li><a href="#">Inversiones</a></li>
+              <li><a href="#">Tasaciones</a></li>
+              <li><a href="#">Asesoramiento Legal</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <ul>
+              <li><i class="fas fa-map-marker-alt"></i> Av. Libertador 1234, Buenos Aires</li>
+              <li><i class="fas fa-phone"></i> +54 9 11 5555-1234</li>
+              <li><i class="fas fa-envelope"></i> contacto@luxeestate.com</li>
+              <li><i class="fas fa-clock"></i> Lun-Vie: 9:00 - 18:00</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Eterial Company - Sistema Inmobiliario Inteligente</p>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <p>&copy; 2026 LuxeEstate. Todos los derechos reservados.</p>
+          <div class="footer-legal">
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Política de Cookies</a>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
