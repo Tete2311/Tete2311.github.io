@@ -98,7 +98,7 @@ body {
 }
 
 /* Hide default cursor on interactive elements */
-a, button, .service-card, .project-card, .nav-links a, .btn, input, textarea {
+a:not(.btn-demo-final), button:not(.btn-demo-final), .service-card, .project-card, .nav-links a, .btn:not(.btn-demo-final), input, textarea {
   cursor: none !important;
 }
 
@@ -106,6 +106,8 @@ a, button, .service-card, .project-card, .nav-links a, .btn, input, textarea {
 .btn-demo-final.active {
   cursor: pointer !important;
   pointer-events: auto !important;
+  z-index: 9999 !important;
+  position: relative;
 }
 
 /* ===================== GLOW BACKGROUND ===================== */
