@@ -14,7 +14,7 @@ function initCustomCursor() {
   });
 
   // Add hover effect to interactive elements
-  const interactiveElements = document.querySelectorAll('a, button, .service-card, .project-card, .nav-links a, .btn, .faq-question');
+  const interactiveElements = document.querySelectorAll('a, button, .service-card, .project-card, .nav-links a, .btn, .faq-question, .btn-demo-final');
   interactiveElements.forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursorCircle.classList.add('hovered');
