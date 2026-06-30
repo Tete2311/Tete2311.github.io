@@ -102,6 +102,12 @@ a, button, .service-card, .project-card, .nav-links a, .btn, input, textarea {
   cursor: none !important;
 }
 
+/* Exception for active demo buttons to allow clicking */
+.btn-demo-final.active {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
 /* ===================== GLOW BACKGROUND ===================== */
 .glow-background {
   position: fixed;
